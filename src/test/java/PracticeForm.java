@@ -20,16 +20,16 @@ public class PracticeForm {
     void practiceFormTest() {
 
         open("/automation-practice-form");
-        String UserName = new String("Ivan ");
-        String UserLastName = new String("Ivanov");
-        String UserEmail = new String("Ivanovich@ya.ru");
-        String UserPhone = new String("9712345674");
+        String userName = "Ivan ";
+        String userLastName = "Ivanov";
+        String userEmail = "Ivanovich@ya.ru";
+        String userPhone = "9712345674";
 
-        $("#firstName").setValue(UserName);
-        $("#lastName").setValue(UserLastName);
-        $("#userEmail").setValue(UserEmail);
+        $("#firstName").setValue(userName);
+        $("#lastName").setValue(userLastName);
+        $("#userEmail").setValue(userEmail);
         $(".custom-control-label").click();
-        $("#userNumber").setValue(UserPhone);
+        $("#userNumber").setValue(userPhone);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("February");
         $(".react-datepicker__year-select").selectOption("2000");
@@ -45,10 +45,10 @@ public class PracticeForm {
         $("#submit").click();
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(
-                text(UserName+UserLastName),
-                text(UserEmail),
+                text(userName+userLastName),
+                text(userEmail),
                 text("Male"),
-                text(UserPhone),
+                text(userPhone),
                 text("Physics"),
                 text("1.jpg"),
                 text("Current Address- address"),
