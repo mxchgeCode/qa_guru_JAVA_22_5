@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeForm {
     @BeforeAll
@@ -20,6 +19,8 @@ public class PracticeForm {
     void practiceFormTest() {
 
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         String userName = "Ivan ";
         String userLastName = "Ivanov";
         String userEmail = "Ivanovich@ya.ru";
