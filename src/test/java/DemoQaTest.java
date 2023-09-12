@@ -1,13 +1,12 @@
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PracticeForm {
+
+public class DemoQaTest {
     @BeforeAll
     static void beforeAll(){
         Configuration.holdBrowserOpen = false;
@@ -57,3 +56,4 @@ public class PracticeForm {
         $("#closeLargeModal").click();
     }
 }
+
