@@ -17,32 +17,32 @@ public class PracticeForm {
     }
     @Test
     void practiceFormTest() {
-
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
-        String userName = "Ivan ";
-        String userLastName = "Ivanov";
-        String userEmail = "Ivanovich@ya.ru";
-        String userPhone = "9712345674";
 
+        String userName = "TestUserName ";
+        String userLastName = "TestLastName";
+        String userEmail = "Test@test.com";
+        String userPhone = "9123456789";
         $("#firstName").setValue(userName);
         $("#lastName").setValue(userLastName);
         $("#userEmail").setValue(userEmail);
         $(".custom-control-label").click();
         $("#userNumber").setValue(userPhone);
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("February");
-        $(".react-datepicker__year-select").selectOption("2000");
-        $(".react-datepicker__day--001").click();
+        $(".react-datepicker__month-select").selectOption("June");
+        $(".react-datepicker__year-select").selectOption("1990");
+        $(".react-datepicker__day--003").click();
         $("#subjectsInput").setValue("p").pressEnter();
         $("label[for='hobbies-checkbox-2']").click();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/1.jpg"));
-        $("#currentAddress").setValue("Current Address- address");
+        $("#uploadPicture").uploadFile(new File("src/test/resources/1.png"));
+        $("#currentAddress").setValue("TEST Address - 123");
         $("#state").click();
         $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#city").click();
         $("#react-select-4-input").setValue("Delhi").pressEnter();
+
         $("#submit").click();
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(
@@ -51,8 +51,8 @@ public class PracticeForm {
                 text("Male"),
                 text(userPhone),
                 text("Physics"),
-                text("1.jpg"),
-                text("Current Address- address"),
+                text("1.png"),
+                text("TEST Address - 123"),
                 text("NCR Delhi"));
         $("#closeLargeModal").click();
     }
