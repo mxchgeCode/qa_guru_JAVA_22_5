@@ -40,7 +40,6 @@ public class TestDemoQaPage {
         $("#react-select-3-input").setValue("NCR").pressEnter();
         $("#city").click();
         $("#react-select-4-input").setValue("Delhi").pressEnter();
-
         $("#submit").click();
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(
