@@ -34,7 +34,7 @@ public class TestDemoQaPage {
         $(".react-datepicker__day--003").click();
         $("#subjectsInput").setValue("p").pressEnter();
         $("label[for='hobbies-checkbox-2']").click();
-        $("#uploadPicture").uploadFile(new File("src/test/resources/1.png"));
+        $("#uploadPicture").uploadFromClasspath("1.png");
         $("#currentAddress").setValue("TEST Address - 123");
         $("#state").click();
         $("#react-select-3-input").setValue("NCR").pressEnter();
